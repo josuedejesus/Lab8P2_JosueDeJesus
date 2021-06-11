@@ -8,6 +8,7 @@ package lab7p2_josuedejesus;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -36,6 +37,8 @@ public class Principal extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jd_agregar_artista = new javax.swing.JDialog();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         nombre_txt = new javax.swing.JTextField();
         genero_cb = new javax.swing.JComboBox<>();
@@ -49,6 +52,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        table_artistas = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
         jd_asignar_album = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -178,21 +187,101 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(59, 59, 59))
         );
 
+        jButton6.setText("Regresar");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(385, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jButton6)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(377, 377, 377))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(209, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(203, 203, 203)
+                .addComponent(jButton6)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Agregar", jPanel4);
+
+        table_artistas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(table_artistas);
+
+        jScrollPane1.setViewportView(jScrollPane2);
+
+        jButton7.setText("Cargar Artistas");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1292, Short.MAX_VALUE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jButton7)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton7)
+                .addContainerGap(544, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Asignar", jPanel5);
+
         javax.swing.GroupLayout jd_agregar_artistaLayout = new javax.swing.GroupLayout(jd_agregar_artista.getContentPane());
         jd_agregar_artista.getContentPane().setLayout(jd_agregar_artistaLayout);
         jd_agregar_artistaLayout.setHorizontalGroup(
             jd_agregar_artistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_agregar_artistaLayout.createSequentialGroup()
-                .addGap(357, 357, 357)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         jd_agregar_artistaLayout.setVerticalGroup(
             jd_agregar_artistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_agregar_artistaLayout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jd_asignar_albumLayout = new javax.swing.GroupLayout(jd_asignar_album.getContentPane());
@@ -298,26 +387,56 @@ public class Principal extends javax.swing.JFrame {
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
         String tipo = "";
-        try{
-        if(rb_instrumental.isSelected())
-        {
-            tipo = "Instrumental";
-        }
-        if(rb_voz.isSelected())
-        {
-            tipo = "Voz";
-        }
-        Artista a = new Artista(nombre_txt.getText(), genero_cb.getSelectedItem().toString(), disquera_txt.getText(), alias_txt.getText(), tipo);
+            if (rb_instrumental.isSelected()) {
+                tipo = "Instrumental";
+            }
+            if (rb_voz.isSelected()) {
+                tipo = "Voz";
+            }
+            Artista a = new Artista(nombre_txt.getText(), genero_cb.getSelectedItem().toString(), disquera_txt.getText(), alias_txt.getText(), tipo);
+            administrarArtistas aa = new administrarArtistas("./artista.cbm");
+            aa.cargarArchivo();
+            aa.setArtista(a);
+            aa.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Artista guardado con exito");
+            
+            nombre_txt.setText("");
+            genero_cb.setSelectedIndex(0);
+            disquera_txt.setText("");
+            alias_txt.setText("");
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        jd_agregar_artista.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        // TODO add your handling code here:
         administrarArtistas aa = new administrarArtistas("./artista.cbm");
         aa.cargarArchivo();
-        aa.setArtista(a);
-        aa.escribirArchivo();
-        JOptionPane.showMessageDialog(this, "Artista guardado con exito");
-        }catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this, "No se pudo guardar la informacion");
-        }
-    }//GEN-LAST:event_jButton5MouseClicked
+        table_artistas.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Genero Musical", "Disquera", "Alias"}) {
+            Class[] types = new Class[]{java.lang.String.class, java.lang.String.class};
+            boolean[] canEdit = new boolean[]{false, false};
+
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        });
+        
+        DefaultTableModel datos = (DefaultTableModel) table_artistas.getModel();
+        
+        for (Artista t : aa.getListaArtistas()) {
+                    Object row[] = {t.getNombre(), t.getGenero(), t.getDisquera(), t.getAlias()};
+                    datos.addRow(row);
+                    table_artistas.setModel(datos);
+                }
+    }//GEN-LAST:event_jButton7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -353,7 +472,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private void abreAgregarArtista() {
         this.setVisible(false);
         jd_agregar_artista.setModal(true);
@@ -371,6 +490,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -382,6 +503,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JDialog jd_agregar_artista;
@@ -390,5 +516,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField nombre_txt;
     private javax.swing.JRadioButton rb_instrumental;
     private javax.swing.JRadioButton rb_voz;
+    private javax.swing.JTable table_artistas;
     // End of variables declaration//GEN-END:variables
+
+    
 }
