@@ -47,7 +47,7 @@ public class administrarAlbumes {
     }
 
     //extra mutador
-    public void listaAlbumes(Album a) {
+    public void setAlbum(Album a) {
         this.listaAlbumes.add(a);
     }
 

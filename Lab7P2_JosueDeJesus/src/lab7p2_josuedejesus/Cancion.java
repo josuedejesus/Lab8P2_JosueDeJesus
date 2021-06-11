@@ -5,11 +5,13 @@
  */
 package lab7p2_josuedejesus;
 
+import java.io.Serializable;
+
 /**
  *
  * @author josue
  */
-public class Cancion {
+public class Cancion implements Serializable{
     private String nombre;
     private int duracion;
     private String compositor;
@@ -17,6 +19,8 @@ public class Cancion {
     private String exclusiva;
     private String productor;
     private String invitado;
+    
+    private static final long SerialVersionUID=777L;
 
     public Cancion() {
     }

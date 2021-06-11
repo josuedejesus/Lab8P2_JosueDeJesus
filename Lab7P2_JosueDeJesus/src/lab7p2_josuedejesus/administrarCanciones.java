@@ -17,21 +17,20 @@ import java.util.ArrayList;
  *
  * @author josue
  */
-public class administrarArtistas {
-
-    private ArrayList<Artista> listaArtistas = new ArrayList();
+public class administrarCanciones {
+    private ArrayList<Cancion> listaCanciones = new ArrayList();
     private File archivo = null;
 
-    public administrarArtistas(String path) {
+    public administrarCanciones(String path) {
         archivo = new File(path);
     }
 
-    public ArrayList<Artista> getListaArtistas() {
-        return listaArtistas;
+    public ArrayList<Cancion> getListaCanciones() {
+        return listaCanciones;
     }
 
-    public void setListaArtistas(ArrayList<Artista> listaArtistas) {
-        this.listaArtistas = listaArtistas;
+    public void setListaCanciones(ArrayList<Cancion> listaCanciones) {
+        this.listaCanciones = listaCanciones;
     }
 
     public File getArchivo() {
@@ -44,26 +43,26 @@ public class administrarArtistas {
 
     @Override
     public String toString() {
-        return "listaArtistas=" + listaArtistas;
+        return "listaCanciones=" + listaCanciones;
     }
 
     //extra mutador
-    public void setArtista(Artista a) {
-        this.listaArtistas.add(a);
+    public void setCancion(Cancion a) {
+        this.listaCanciones.add(a);
     }
 
     public void cargarArchivo() {
         try {
-            listaArtistas = new ArrayList();
-            Artista temp;
+            listaCanciones = new ArrayList();
+            Cancion temp;
             if (archivo.exists()) {
                 FileInputStream entrada
                         = new FileInputStream(archivo);
                 ObjectInputStream objeto
                         = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (Artista) objeto.readObject()) != null) {
-                        listaArtistas.add(temp);
+                    while ((temp = (Cancion) objeto.readObject()) != null) {
+                        listaCanciones.add(temp);
                     }
                 } catch (EOFException e) {
                     //encontro el final del archivo
@@ -82,7 +81,7 @@ public class administrarArtistas {
         try {
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
-            for (Artista a : listaArtistas) {
+            for (Cancion a : listaCanciones) {
                 bw.writeObject(a);
             }
             bw.flush();

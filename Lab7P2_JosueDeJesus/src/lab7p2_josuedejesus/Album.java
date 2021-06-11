@@ -5,19 +5,22 @@
  */
 package lab7p2_josuedejesus;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author josue
  */
-public class Album {
+public class Album implements Serializable{
     private String nombre;
     private String publicacion;
     private String genero;
     private String formato;
     private String alias;
     ArrayList<Cancion> canciones = new ArrayList();
+    
+    private static final long SerialVersionUID=777L;
 
     public Album() {
     }
