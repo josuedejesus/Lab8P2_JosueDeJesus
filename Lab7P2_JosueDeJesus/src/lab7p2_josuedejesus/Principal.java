@@ -416,19 +416,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         administrarArtistas aa = new administrarArtistas("./artista.cbm");
         aa.cargarArchivo();
-        table_artistas.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Genero Musical", "Disquera", "Alias"}) {
-            Class[] types = new Class[]{java.lang.String.class, java.lang.String.class};
-            boolean[] canEdit = new boolean[]{false, false};
-
-            public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
-            }
-        });
-        
+        table_artistas.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Genero Musical", "Disquera", "Alias"}));
         DefaultTableModel datos = (DefaultTableModel) table_artistas.getModel();
         
         for (Artista t : aa.getListaArtistas()) {
