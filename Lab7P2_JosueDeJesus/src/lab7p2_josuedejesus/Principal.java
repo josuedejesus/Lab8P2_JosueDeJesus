@@ -55,6 +55,12 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         table_artistas = new javax.swing.JTable();
         jButton7 = new javax.swing.JButton();
+        buscar_album = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jButton18 = new javax.swing.JButton();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tabla_buscar_albumes = new javax.swing.JTable();
+        jButton19 = new javax.swing.JButton();
         jd_agregar_cancion = new javax.swing.JDialog();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
@@ -280,6 +286,35 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setText("Album");
+
+        jButton18.setText("Buscar");
+        jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton18MouseClicked(evt);
+            }
+        });
+
+        tabla_buscar_albumes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane12.setViewportView(tabla_buscar_albumes);
+
+        jButton19.setText("Asignar");
+        jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton19MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -287,9 +322,19 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1292, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jButton7)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton18)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton7)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buscar_album, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jButton19))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -297,10 +342,20 @@ public class Principal extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton7)
-                .addContainerGap(544, Short.MAX_VALUE))
+                .addGap(127, 127, 127)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buscar_album, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton18)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton19)
+                .addContainerGap(234, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Asignar", jPanel5);
@@ -715,14 +770,15 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton16)
-                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jButton15)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel11Layout.createSequentialGroup()
                                     .addComponent(jButton11)
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(buscar_compositor_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGap(204, 204, 204))
+                                .addGroup(jPanel11Layout.createSequentialGroup()
+                                    .addComponent(jLabel11)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(buscar_compositor_txt))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -1086,11 +1142,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         administrarArtistas aa = new administrarArtistas("./artista.cbm");
         aa.cargarArchivo();
-        table_artistas.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Genero Musical", "Disquera", "Alias"}));
+        table_artistas.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Genero Musical", "Disquera", "Alias", "Albumes"}));
         DefaultTableModel datos = (DefaultTableModel) table_artistas.getModel();
 
         for (Artista t : aa.getListaArtistas()) {
-            Object row[] = {t.getNombre(), t.getGenero(), t.getDisquera(), t.getAlias()};
+            Object row[] = {t.getNombre(), t.getGenero(), t.getDisquera(), t.getAlias(), t.getAlbumes()};
             datos.addRow(row);
             table_artistas.setModel(datos);
         }
@@ -1250,6 +1306,24 @@ public class Principal extends javax.swing.JFrame {
                 modelo.addRow(tabla);
             }
         }
+        
+        tabla_lista_artistas.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre"}));
+        DefaultTableModel modeloArtistas = (DefaultTableModel) tabla_lista_artistas.getModel();
+        for (Artista a : ap.getListaArtistas()) {
+            if (a.getNombre().equals(buscar_txt.getText())) {
+                Object tabla[] = {a.getNombre()};
+                modeloArtistas.addRow(tabla);
+            }
+        }
+        
+        tabla_lista_canciones.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Duracion"}));
+        DefaultTableModel modeloCanciones = (DefaultTableModel) tabla_lista_canciones.getModel();
+        for (Cancion a : ac.getListaCanciones()) {
+            if (a.getNombre().equals(buscar_txt.getText())) {
+                Object tabla[] = {a.getNombre(), a.getDuracion() / 60 + ":00"};
+                modeloCanciones.addRow(tabla);
+            }
+        }
     }//GEN-LAST:event_jButton17MouseClicked
 
     private void tabla_lista_albumesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla_lista_albumesMouseClicked
@@ -1274,6 +1348,42 @@ public class Principal extends javax.swing.JFrame {
     private void tabla_lista_artistasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla_lista_artistasMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tabla_lista_artistasMouseClicked
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+        // TODO add your handling code here:
+        administrarAlbumes aa = new administrarAlbumes("./album.cbm");
+        aa.cargarArchivo();
+
+        tabla_buscar_albumes.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Genero"}));
+        DefaultTableModel datos = (DefaultTableModel) tabla_buscar_albumes.getModel();
+        for (Album t : aa.getListaAlbumes()) {
+            if (t.getNombre().equals(buscar_album.getText())) {
+                Object tabla[] = {t.getNombre(), t.getGenero()};
+                datos.addRow(tabla);
+            }
+        }
+    }//GEN-LAST:event_jButton18MouseClicked
+
+    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+        // TODO add your handling code here:
+        administrarArtistas ac = new administrarArtistas("./artista.cbm");
+        ac.cargarArchivo();
+        administrarAlbumes aa = new administrarAlbumes("./album.cbm");
+        aa.cargarArchivo();
+        DefaultTableModel modelo = (DefaultTableModel) tabla_buscar_albumes.getModel();
+        DefaultTableModel modeloArtista = (DefaultTableModel) table_artistas.getModel();
+
+        for (Artista i : ac.getListaArtistas()) {
+            if (i.getNombre().equals(modeloArtista.getValueAt(table_artistas.getSelectedRow(), 0))) {
+                for (Album t : aa.getListaAlbumes()) {
+                    if (t.getNombre().equals(modelo.getValueAt(tabla_buscar_albumes.getSelectedRow(), 0))) {
+                        i.getAlbumes().add(new Album(t.getNombre(), t.getPublicacion(), t.getGenero(), t.getFormato(), t.getAlias()));
+                        ac.escribirArchivo();
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton19MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1352,6 +1462,7 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField alias_txt;
     private javax.swing.JTextField alias_txt3;
+    private javax.swing.JTextField buscar_album;
     private javax.swing.JTextField buscar_compositor_txt;
     private javax.swing.JTextField buscar_txt;
     private javax.swing.JRadioButton cd_rb1;
@@ -1373,6 +1484,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1384,6 +1497,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1421,6 +1535,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1450,6 +1565,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_si;
     private javax.swing.JRadioButton rb_voz;
     private javax.swing.JTable tabla_albumes;
+    private javax.swing.JTable tabla_buscar_albumes;
     private javax.swing.JTable tabla_buscar_canciones;
     private javax.swing.JTable tabla_canciones;
     private javax.swing.JTable tabla_lista_albumes;
