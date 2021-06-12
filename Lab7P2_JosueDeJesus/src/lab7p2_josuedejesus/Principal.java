@@ -105,12 +105,33 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         tabla_albumes = new javax.swing.JTable();
         jButton11 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        buscar_compositor_txt = new javax.swing.JTextField();
+        jButton15 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tabla_buscar_canciones = new javax.swing.JTable();
+        jButton16 = new javax.swing.JButton();
+        jd_buscar = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jButton17 = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tabla_lista_albumes = new javax.swing.JTable();
+        buscar_txt = new javax.swing.JTextField();
+        label_album = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tabla_lista_canciones = new javax.swing.JTable();
+        label_cancion = new javax.swing.JLabel();
+        jd_canciones = new javax.swing.JDialog();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        lista_canciones = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -505,7 +526,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        genero_cb3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        genero_cb3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rock", "Pop", "Metal", "Punk Rock", "Electronic", "HIp Hop", "Rap" }));
 
         digital_rb1.setText("Digital");
 
@@ -650,6 +671,35 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel11.setText("Compositor");
+
+        jButton15.setText("Buscar");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
+
+        tabla_buscar_canciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane8.setViewportView(tabla_buscar_canciones);
+
+        jButton16.setText("Asiganar");
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -657,9 +707,19 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1247, Short.MAX_VALUE)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jButton11)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton16)
+                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton15)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton11)
+                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buscar_compositor_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -670,7 +730,17 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton11)
-                .addContainerGap(589, Short.MAX_VALUE))
+                .addGap(75, 75, 75)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11)
+                    .addComponent(buscar_compositor_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton15)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton16)
+                .addContainerGap(315, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Asignar", jPanel11);
@@ -692,34 +762,151 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jd_buscar.setBackground(java.awt.Color.darkGray);
+        jd_buscar.setForeground(java.awt.Color.darkGray);
+
+        jPanel2.setBackground(java.awt.Color.darkGray);
+
+        jButton17.setText("Buscar");
+        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton17MouseClicked(evt);
+            }
+        });
+
+        tabla_lista_albumes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        tabla_lista_albumes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabla_lista_albumesMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(tabla_lista_albumes);
+
+        label_album.setText("Album");
+
+        tabla_lista_canciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane9.setViewportView(tabla_lista_canciones);
+
+        label_cancion.setText("Canciones");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(197, 197, 197)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton17)
+                                    .addComponent(buscar_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(label_album)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane7)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(label_cancion)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(buscar_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton17)
+                .addGap(226, 226, 226)
+                .addComponent(label_album)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(label_cancion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jd_buscarLayout = new javax.swing.GroupLayout(jd_buscar.getContentPane());
+        jd_buscar.getContentPane().setLayout(jd_buscarLayout);
+        jd_buscarLayout.setHorizontalGroup(
+            jd_buscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jd_buscarLayout.setVerticalGroup(
+            jd_buscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        lista_canciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane10.setViewportView(lista_canciones);
+
+        javax.swing.GroupLayout jd_cancionesLayout = new javax.swing.GroupLayout(jd_canciones.getContentPane());
+        jd_canciones.getContentPane().setLayout(jd_cancionesLayout);
+        jd_cancionesLayout.setHorizontalGroup(
+            jd_cancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_cancionesLayout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(199, Short.MAX_VALUE))
+        );
+        jd_cancionesLayout.setVerticalGroup(
+            jd_cancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_cancionesLayout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(261, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(java.awt.Color.black);
 
-        jButton1.setText("Home");
+        jButton1.setText("Inicio");
 
-        jButton2.setText("Search");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(117, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(788, Short.MAX_VALUE))
-        );
+        jButton2.setText("Buscar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText("Agregar artista a Spotify");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -742,6 +929,64 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(253, 253, 253)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addGap(18, 18, 18)
+                .addComponent(jButton12)
+                .addContainerGap(436, Short.MAX_VALUE))
+        );
+
+        jPanel12.setBackground(java.awt.Color.black);
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 349, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel13.setBackground(java.awt.Color.darkGray);
+        jPanel13.setForeground(java.awt.Color.darkGray);
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 611, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         jMenu1.setText("Administrar");
         jMenuBar1.add(jMenu1);
 
@@ -757,26 +1002,16 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(250, 250, 250)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(347, 347, 347))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)
-                            .addComponent(jButton12))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -843,7 +1078,7 @@ public class Principal extends javax.swing.JFrame {
         if (rb_si.isSelected()) {
             exclusiva = "Si";
         }
-        Cancion c = new Cancion(nombre_txt2.getText(), Integer.parseInt(duracion_txt.getText()), compositor_txt.getText(), distribuidor_txt.getText(), exclusiva,productor_txt1.getText(),invitado_txt.getText());
+        Cancion c = new Cancion(nombre_txt2.getText(), Integer.parseInt(duracion_txt.getText()), compositor_txt.getText(), distribuidor_txt.getText(), exclusiva, productor_txt1.getText(), invitado_txt.getText());
         administrarCanciones ac = new administrarCanciones("./cancion.cbm");
         ac.cargarArchivo();
         ac.setCancion(c);
@@ -860,13 +1095,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
         // TODO add your handling code here:
-        administrarAlbumes aa = new administrarAlbumes("./cancion.cbm");
-        aa.cargarArchivo();
-        tabla_canciones.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "duracion", "nombre del compositor", "nombre del distribuidor", "exclusiva a Spotify", "nombre del productor", "artista invitado"}));
+        administrarCanciones ac = new administrarCanciones("./cancion.cbm");
+        ac.cargarArchivo();
+        tabla_canciones.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "duracion", "Nombre del Compositor", "Nombre del Distribuidor", "Exclusiva a Spotify", "Nombre del Productor", "Artista Invitado"}));
         DefaultTableModel datos = (DefaultTableModel) tabla_canciones.getModel();
 
-        for (Album t : aa.getListaAlbumes()) {
-            Object row[] = {t.getNombre(), t.getPublicacion(), t.getGenero(), t.getFormato(), t.getAlias()};
+        for (Cancion t : ac.getListaCanciones()) {
+            Object row[] = {t.getNombre(), t.getDuracion(), t.getCompositor(), t.getDistribuidor(), t.getExclusiva(), t.getProductor(), t.getInvitado()};
             datos.addRow(row);
             tabla_canciones.setModel(datos);
         }
@@ -881,7 +1116,7 @@ public class Principal extends javax.swing.JFrame {
         if (cd_rb1.isSelected()) {
             formato = "Digital";
         }
-        Album a = new Album(nombre_txt3.getText(), fecha_txt1.getText(), genero_cb3.getSelectedItem().toString(), formato,alias_txt3.getText());
+        Album a = new Album(nombre_txt3.getText(), fecha_txt1.getText(), genero_cb3.getSelectedItem().toString(), formato, alias_txt3.getText());
         administrarAlbumes aa = new administrarAlbumes("./album.cbm");
         aa.cargarArchivo();
         aa.setAlbum(a);
@@ -898,13 +1133,13 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         administrarAlbumes aa = new administrarAlbumes("./album.cbm");
         aa.cargarArchivo();
-        tabla_canciones.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Fecha de Publicacion", "Genero Musical", "Formato", "Alias"}));
-        DefaultTableModel datos = (DefaultTableModel) tabla_canciones.getModel();
+        tabla_albumes.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Fecha de Publicacion", "Genero Musical", "Formato", "Alias", "Canciones"}));
+        DefaultTableModel datos = (DefaultTableModel) tabla_albumes.getModel();
 
         for (Album t : aa.getListaAlbumes()) {
-            Object row[] = {t.getNombre(), t.getPublicacion(), t.getGenero(), t.getFormato(), t.getAlias()};
+            Object row[] = {t.getNombre(), t.getPublicacion(), t.getGenero(), t.getFormato(), t.getAlias(), t.getCanciones()};
             datos.addRow(row);
-            tabla_canciones.setModel(datos);
+            tabla_albumes.setModel(datos);
         }
     }//GEN-LAST:event_jButton11MouseClicked
 
@@ -924,6 +1159,82 @@ public class Principal extends javax.swing.JFrame {
         jd_agregar_cancion.dispose();
         this.setVisible(true);
     }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        // TODO add your handling code here:
+        administrarCanciones ac = new administrarCanciones("./cancion.cbm");
+        ac.cargarArchivo();
+
+        tabla_buscar_canciones.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Compositor"}));
+        DefaultTableModel datos = (DefaultTableModel) tabla_buscar_canciones.getModel();
+        for (Cancion t : ac.getListaCanciones()) {
+            if (t.getCompositor().equals(buscar_compositor_txt.getText())) {
+                Object tabla[] = {t.getNombre(), t.getCompositor()};
+                datos.addRow(tabla);
+            }
+        }
+    }//GEN-LAST:event_jButton15MouseClicked
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+        // TODO add your handling code here:
+        administrarCanciones ac = new administrarCanciones("./cancion.cbm");
+        ac.cargarArchivo();
+        administrarAlbumes aa = new administrarAlbumes("./album.cbm");
+        aa.cargarArchivo();
+        Album a = new Album();
+        DefaultTableModel modelo = (DefaultTableModel) tabla_buscar_canciones.getModel();
+        DefaultTableModel modeloAlbum = (DefaultTableModel) tabla_albumes.getModel();
+        for (Album i : aa.getListaAlbumes()) {
+            if (i.getNombre().equals(modeloAlbum.getValueAt(tabla_albumes.getSelectedRow(), 0))) {
+                for (Cancion t : ac.getListaCanciones()) {
+                    if (t.getNombre().equals(modelo.getValueAt(tabla_buscar_canciones.getSelectedRow(), 0))) {
+                        a.getCanciones().add(new Cancion(t.getNombre(), t.getDuracion(), t.getCompositor(), t.getDistribuidor(), t.getExclusiva(), t.getInvitado(), t.getInvitado()));
+                    }
+                }
+            }
+        }
+        
+    }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        abreBuscar();
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        // TODO add your handling code here:
+        administrarCanciones ac = new administrarCanciones("./cancion.cbm");
+        ac.cargarArchivo();
+        administrarAlbumes aa = new administrarAlbumes("./album.cbm");
+        aa.cargarArchivo();
+        administrarArtistas ap = new administrarArtistas("./artista.cbm");
+        ap.cargarArchivo();
+        
+        tabla_lista_albumes.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Compositor"}));
+        DefaultTableModel modelo = (DefaultTableModel) tabla_lista_albumes.getModel();
+        for(Album a : aa.getListaAlbumes())
+        {
+            if(a.getNombre().equals(buscar_txt.getText()))
+            {
+                Object tabla[] = {a.getNombre(), a.getGenero()};
+                modelo.addRow(tabla);
+            }
+        } 
+    }//GEN-LAST:event_jButton17MouseClicked
+
+    private void tabla_lista_albumesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla_lista_albumesMouseClicked
+        // TODO add your handling code here:
+        abreCanciones();
+        lista_canciones.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Nombre", "Compositor"}));
+        DefaultTableModel modelo = (DefaultTableModel) tabla_lista_albumes.getModel();
+        Album temp = (Album) modelo.getValueAt(tabla_lista_albumes.getSelectedRow(), 0);
+        for (Cancion t : temp.getCanciones()) {
+                    Object row[] = {t.getNombre()};
+                    DefaultTableModel m = (DefaultTableModel) lista_canciones.getModel();
+                    m.addRow(row);
+                    lista_canciones.setModel(m);
+                }
+    }//GEN-LAST:event_tabla_lista_albumesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -975,7 +1286,7 @@ public class Principal extends javax.swing.JFrame {
         jd_agregar_album.setLocationRelativeTo(this);
         jd_agregar_album.setVisible(true);
     }
-    
+
     private void abreAgregarCancion() {
         this.setVisible(false);
         jd_agregar_cancion.setModal(true);
@@ -983,10 +1294,27 @@ public class Principal extends javax.swing.JFrame {
         jd_agregar_cancion.setLocationRelativeTo(this);
         jd_agregar_cancion.setVisible(true);
     }
+    
+    private void abreBuscar() {
+        jd_buscar.setModal(true);
+        jd_buscar.pack();
+        jd_buscar.setLocationRelativeTo(this);
+        jd_buscar.setVisible(true);
+    }
+
+    private void abreCanciones() {
+        jd_buscar.setVisible(false);
+        jd_canciones.setModal(true);
+        jd_canciones.pack();
+        jd_canciones.setLocationRelativeTo(this);
+        jd_canciones.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField alias_txt;
     private javax.swing.JTextField alias_txt3;
+    private javax.swing.JTextField buscar_compositor_txt;
+    private javax.swing.JTextField buscar_txt;
     private javax.swing.JRadioButton cd_rb1;
     private javax.swing.JTextField compositor_txt;
     private javax.swing.JRadioButton digital_rb1;
@@ -1003,6 +1331,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1013,6 +1344,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1037,6 +1369,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1045,17 +1380,26 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JDialog jd_agregar_album;
     private javax.swing.JDialog jd_agregar_artista;
     private javax.swing.JDialog jd_agregar_cancion;
+    private javax.swing.JDialog jd_buscar;
+    private javax.swing.JDialog jd_canciones;
+    private javax.swing.JLabel label_album;
+    private javax.swing.JLabel label_cancion;
+    private javax.swing.JTable lista_canciones;
     private javax.swing.JTextField nombre_txt;
     private javax.swing.JTextField nombre_txt2;
     private javax.swing.JTextField nombre_txt3;
@@ -1065,7 +1409,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_si;
     private javax.swing.JRadioButton rb_voz;
     private javax.swing.JTable tabla_albumes;
+    private javax.swing.JTable tabla_buscar_canciones;
     private javax.swing.JTable tabla_canciones;
+    private javax.swing.JTable tabla_lista_albumes;
+    private javax.swing.JTable tabla_lista_canciones;
     private javax.swing.JTable table_artistas;
     // End of variables declaration//GEN-END:variables
 
